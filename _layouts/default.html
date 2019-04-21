@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.theme_settings.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  {%- if page.title_meta -%}
+    <title>{{ page.title_meta }}</title>
+    {%- seo title=false -%}
+  {%- else -%}
+    {%- seo title -%}
+  {%- endif -%}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ 'css/main.css' | absolute_url }}">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="header-title" href="{{ '/' | absolute_url }}">
+        {{ site.title | escape }}
+      </a>
+      <nav>
+        <ul class="menu">
+          {%- assign menu_pages = site.theme_settings.menu_pages | default: site.pages -%}
+          {%- for menu_page in menu_pages -%}
+            {%- assign page = site.pages | where: "path", menu_page.path | first -%}
+            {%- if menu_page.title or page.title -%}
+              <li>
+                <a href="{{ page.url | absolute_url }}">
+                  {{ menu_page.title | default: page.title | escape }}
+                </a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main container">{{ content }}</main>
+  <footer class="footer container">
+    <nav>
+      {%- if site.theme_settings.footer_links -%}
+        <ul class="footer-links">
+          {%- for link in site.theme_settings.footer_links -%}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </nav>
+  </footer>
+</body>
+</html>

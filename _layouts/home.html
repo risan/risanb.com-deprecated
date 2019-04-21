@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="home-section">
+  <article>{{ content }}</article>
+</section>
+
+{%- if site.posts.size > 0 -%}
+  <section class="home-section">
+    <h2>Recent Posts</h2>
+    {%- for post in site.posts limit:3 -%}
+      {% include post-list-item.html %}
+    {%- endfor -%}
+  </section>
+{%- endif -%}

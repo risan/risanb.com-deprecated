@@ -1,0 +1,23 @@
+<article class="post-list-item">
+  <h3 class="post-list-item-title">
+    <a href="{{ post.url | absolute_url }}">
+      {{ post.title | escape }}
+    </a>
+  </h3>
+  {%- if post.description -%}
+    <p>{{ post.description }}</p>
+  {%- else -%}
+    {{ post.excerpt }}
+  {%- endif -%}
+  {%- assign date_format = site.theme_settings.date_format | default: "%b %-d, %Y" -%}
+  <p class="post-list-item-info">
+    <span>{{ post.date | date: date_format }}</span>
+    <span>&middot;</span>
+    {%- assign total_words = post.content | number_of_words -%}
+    {%- if total_words < 360 -%}
+      <span>1 minute read</span>
+    {%- else -%}
+      <span>{{ total_words | divided_by: 180 }} minutes read</span>
+    {%- endif -%}
+  </p>
+</article>

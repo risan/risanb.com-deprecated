@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article>
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+    <p class="post-info">
+      <time datetime="{{ page.date | date_to_xmlschema }}" pubdate>
+        {%- assign date_format = site.theme_settings.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      <span>&middot;</span>
+      {%- assign total_words = page.content | number_of_words -%}
+      {%- if total_words < 360 -%}
+        <span>1 minute read</span>
+      {%- else -%}
+        <span>{{ total_words | divided_by: 180 }} minutes read</span>
+      {%- endif -%}
+    </p>
+  </header>
+  {{ content }}
+</article>
