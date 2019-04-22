@@ -67,6 +67,13 @@ pre {
   background: $pre-bg;
   border-radius: 10px;
 
+  @media screen and (max-width: 767px) {
+    border-radius: 3px;
+    margin-left: -1 * $spacer;
+    margin-right: -1 * $spacer;
+    padding: $spacer;
+  }
+
   code {
     font-size: inherit;
     color: inherit;
