@@ -5,10 +5,7 @@ description: >-
   codes for fun. Seriously.
 
 # Url settings
-# baseurl: ""
-# url: ""
 permalink: /blog/:title:output_ext
-repository: risan/risan.github.io
 
 # Theme settings
 theme_settings:
