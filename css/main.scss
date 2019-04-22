@@ -10,26 +10,30 @@
 }
 
 .header {
-  font-size: 90%;
+  font-size: 95%;
   background: $header-bg;
   padding-top: .75 * $spacer;
   padding-bottom: .75 * $spacer;
 
   .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
 
   a {
     color: $header-link-color;
-    text-transform: uppercase;
   }
 }
 
 .header-title {
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
+}
+
+.nav {
+  overflow-x: scroll;
 }
 
 .menu {
@@ -59,12 +63,17 @@
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
   margin: 0;
 
-  li:not(:last-child) {
-    margin-right: $spacer;
+  li {
+    margin-bottom: .5 * $spacer;
+
+    &:not(:last-child) {
+      margin-right: $spacer;
+    }
   }
 }
 

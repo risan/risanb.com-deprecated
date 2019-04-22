@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/css/main.css' | absolute_url }}">
   <link rel="shortcut icon" href="{{ '/img/earth-48x48.png' | absolute_url }}">
+  {%- feed_meta -%}
 </head>
 <body>
   <header class="header">
@@ -18,7 +19,7 @@
       <a class="header-title" href="{{ '/' | absolute_url }}">
         {{ site.title | escape }}
       </a>
-      <nav>
+      <nav class="nav">
         <ul class="menu">
           {%- assign menu_pages = site.theme_settings.menu_pages | default: site.pages -%}
           {%- for menu_page in menu_pages -%}
@@ -38,15 +39,16 @@
   <main class="main container">{{ content }}</main>
   <footer class="footer container">
     <nav>
-      {%- if site.theme_settings.footer_links -%}
-        <ul class="footer-links">
-          {%- for link in site.theme_settings.footer_links -%}
-            <li>
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
+      <ul class="footer-links">
+        {%- for link in site.theme_settings.footer_links -%}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+        <li>
+          <a href="{{ 'feed.xml' }}">Atom Feed</a>
+        </li>
+      </ul>
     </nav>
   </footer>
 </body>
