@@ -9,14 +9,14 @@
     {%- seo title -%}
   {%- endif -%}
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/css/main.css' | absolute_url }}">
-  <link rel="shortcut icon" href="{{ '/img/earth-48x48.png' | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+  <link rel="shortcut icon" href="{{ '/img/earth-48x48.png' | relative_url }}">
   {%- feed_meta -%}
 </head>
 <body>
   <header class="header">
     <div class="container">
-      <a class="header-title" href="{{ '/' | absolute_url }}">
+      <a class="header-title" href="{{ '/' | relative_url }}">
         {{ site.title | escape }}
       </a>
       <nav class="nav">
@@ -26,7 +26,7 @@
             {%- assign matched_site_page = site.pages | where: "path", menu_page.path | first -%}
             {%- if menu_page.title or matched_site_page.title -%}
               <li>
-                <a href="{{ matched_site_page.url | absolute_url }}">
+                <a href="{{ matched_site_page.url | relative_url }}">
                   {{ menu_page.title | default: matched_site_page.title | escape }}
                 </a>
               </li>
@@ -58,8 +58,6 @@
     gtag('js', new Date());
     gtag('config', '{{ site.theme_settings.google_analytics }}', {
       page_title: '{{ page.title | escape }}',
-      page_path: '{{ page.url }}',
-      page_location: '{{ page.url | absolute_url }}',
       anonymize_ip: true
     });
   </script>
