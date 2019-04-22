@@ -6,7 +6,7 @@ description: >-
 
 # Url settings
 baseurl: ""
-url: ""
+url: "https://risanb.com"
 permalink: /blog/:title:output_ext
 
 # Theme settings
