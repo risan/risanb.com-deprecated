@@ -14,6 +14,7 @@ theme_settings:
   lang: en
   date_format: "%-d %B %Y"
   google_analytics: UA-27136969-15
+  disqus_website_name: risanb
   menu_pages:
     -
       path: blog.md
@@ -60,6 +61,7 @@ defaults:
       type: "posts"
     values:
       layout: post
+      comments: true
       image:
         path: /img/default-og.jpg
         width: 1200
@@ -74,11 +76,6 @@ defaults:
         path: /img/default-og.jpg
         width: 1200
         height: 800
-  -
-    scope:
-      path: "google*.html"
-    values:
-      sitemap: false
 
 # Plugins
 plugins:
