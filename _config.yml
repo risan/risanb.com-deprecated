@@ -76,6 +76,7 @@ defaults:
 
 # Plugins
 plugins:
+  - jekyll-feed
   - jekyll-seo-tag
 
 # jekyll-seo-tag plugin settings
