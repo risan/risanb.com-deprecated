@@ -73,11 +73,17 @@ defaults:
         path: /img/default-og.jpg
         width: 1200
         height: 800
+  -
+    scope:
+      path: "google*.html"
+    values:
+      sitemap: false
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # jekyll-seo-tag plugin settings
 lang: en_US
