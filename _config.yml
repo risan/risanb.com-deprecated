@@ -13,6 +13,7 @@ permalink: /blog/:title:output_ext
 theme_settings:
   lang: en
   date_format: "%-d %B %Y"
+  google_analytics: UA-27136969-15
   menu_pages:
     -
       path: blog.md

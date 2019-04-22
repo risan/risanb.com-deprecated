@@ -23,11 +23,11 @@
         <ul class="menu">
           {%- assign menu_pages = site.theme_settings.menu_pages | default: site.pages -%}
           {%- for menu_page in menu_pages -%}
-            {%- assign page = site.pages | where: "path", menu_page.path | first -%}
-            {%- if menu_page.title or page.title -%}
+            {%- assign matched_site_page = site.pages | where: "path", menu_page.path | first -%}
+            {%- if menu_page.title or matched_site_page.title -%}
               <li>
-                <a href="{{ page.url | absolute_url }}">
-                  {{ menu_page.title | default: page.title | escape }}
+                <a href="{{ matched_site_page.url | absolute_url }}">
+                  {{ menu_page.title | default: matched_site_page.title | escape }}
                 </a>
               </li>
             {%- endif -%}
@@ -51,5 +51,17 @@
       </ul>
     </nav>
   </footer>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.theme_settings.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.theme_settings.google_analytics }}', {
+      page_title: '{{ page.title | escape }}',
+      page_path: '{{ page.url }}',
+      page_location: '{{ page.url | absolute_url }}',
+      anonymize_ip: true
+    });
+  </script>
 </body>
 </html>
