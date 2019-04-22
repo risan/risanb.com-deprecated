@@ -7,6 +7,7 @@ gem "github-pages", group: :jekyll_plugins
 # Plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.11.0"
+  gem "jekyll-github-metadata", "~> 2.12"
   gem "jekyll-seo-tag", "~> 2.5"
   gem "jekyll-sitemap", "~> 1.2"
 end

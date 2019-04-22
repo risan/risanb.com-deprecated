@@ -6,7 +6,7 @@ description: >-
 
 # Url settings
 baseurl: ""
-url: "https://risanb.com"
+url: ""
 permalink: /blog/:title:output_ext
 
 # Theme settings
@@ -80,6 +80,7 @@ defaults:
 # Plugins
 plugins:
   - jekyll-feed
+  - jekyll-github-metadata
   - jekyll-seo-tag
   - jekyll-sitemap
 
