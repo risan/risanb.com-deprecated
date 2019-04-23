@@ -12,8 +12,6 @@ group :jekyll_plugins do
   gem "jekyll-sitemap", "~> 1.2"
 end
 
-gem "dotenv", groups: [:development, :test]
-
 # Include zoneinfo for Windows
 # gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
