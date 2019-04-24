@@ -1,6 +1,11 @@
 ---
 layout: home
 title_meta: Risan Bagja's Blog - Journal of a Passionate Coder
+display_collections:
+  -
+    title: Recent Tips
+    type: tips
+    limit: 5
 ---
 # Welcome to My Blog!
 

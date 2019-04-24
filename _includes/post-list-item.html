@@ -15,9 +15,9 @@
     <span>&middot;</span>
     {%- assign total_words = post.content | number_of_words -%}
     {%- if total_words < 360 -%}
-      <span>1 minute read</span>
+      <span>1 min read</span>
     {%- else -%}
-      <span>{{ total_words | divided_by: 180 }} minutes read</span>
+      <span>{{ total_words | divided_by: 180 }} min read</span>
     {%- endif -%}
   </p>
 </article>

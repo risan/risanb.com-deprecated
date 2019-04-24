@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<section>
+  <h1>{{ page.title | default: "All Posts" }}</h1>
+  {%- assign sorted_posts = site[page.collection_type] | sort: "date" | reverse -%}
+  <ul class="post-links">
+    {%- for post in sorted_posts -%}
+      {%- include post-link.html -%}
+    {%- endfor -%}
+  </ul>
+</section>

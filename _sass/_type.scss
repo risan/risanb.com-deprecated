@@ -1,3 +1,6 @@
+@import 'mixins';
+@import 'variables';
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
@@ -67,7 +70,7 @@ pre {
   background: $pre-bg;
   border-radius: 10px;
 
-  @media screen and (max-width: 767px) {
+  @include screen-md {
     border-radius: 3px;
     margin-left: -1 * $spacer;
     margin-right: -1 * $spacer;

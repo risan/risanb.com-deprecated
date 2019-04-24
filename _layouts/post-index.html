@@ -1,11 +1,9 @@
 ---
 layout: default
 ---
-{%- if site.posts.size > 0 -%}
-  <section>
-    <h1>{{ page.title | default: "All Posts" }}</h1>
-    {%- for post in site.posts -%}
-      {% include post-list-item.html %}
-    {%- endfor -%}
-  </section>
-{%- endif -%}
+<section>
+  <h1>{{ page.title | default: "All Posts" }}</h1>
+  {%- for post in site.posts -%}
+    {%- include post-list-item.html -%}
+  {%- endfor -%}
+</section>

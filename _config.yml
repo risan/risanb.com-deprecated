@@ -7,16 +7,23 @@ description: >-
 # Url settings
 permalink: /blog/:title:output_ext
 
+collections:
+  tips:
+    output: true
+
 # Theme settings
 theme_settings:
   lang: en
-  date_format: "%-d %B %Y"
+  date_format: "%-d %b %Y"
   google_analytics: UA-27136969-15
   disqus_website_name: risanb
   menu_pages:
     -
       path: blog.md
       title: Blog
+    -
+      path: tips.md
+      title: Tips
     -
       path: about.md
       title: About
@@ -51,18 +58,6 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
-    values:
-      layout: post
-      comments: true
-      image:
-        path: /img/default-og.jpg
-        width: 1200
-        height: 800
-  -
-    scope:
-      path: ""
-      type: "pages"
     values:
       layout: page
       comments: false
@@ -70,6 +65,20 @@ defaults:
         path: /img/default-og.jpg
         width: 1200
         height: 800
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      comments: true
+  -
+    scope:
+      path: ""
+      type: "tips"
+    values:
+      layout: post
+      comments: true
 
 # Plugins
 plugins:
@@ -77,6 +86,11 @@ plugins:
   - jekyll-github-metadata
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# jekyll-feed plugin settings
+feed:
+  collections:
+    - tips
 
 # jekyll-seo-tag plugin settings
 lang: en_US

@@ -5,7 +5,7 @@
 // Layout
 .container {
   max-width: $container-max-width;
-  padding: 0 $spacer * 2;
+  padding: 0 $spacer * 1.25;
   margin: auto;
 }
 
@@ -121,5 +121,27 @@
 .post-info {
   span:not(:last-child) {
     margin-right: .25 * $spacer;
+  }
+}
+
+// Post links
+.post-links {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.post-link {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: .25 * $spacer;
+  margin-bottom: .25 * $spacer;
+  border-bottom: 1px dotted transparentize($grey, .75);
+}
+
+.post-link-date {
+  color: $grey;
+
+  @include screen-sm {
+    display: none;
   }
 }

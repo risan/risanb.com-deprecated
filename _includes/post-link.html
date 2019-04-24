@@ -1,0 +1,7 @@
+<li class="post-link">
+  <a href="{{ post.url | relative_url }}">
+    {{ post.title }}
+  </a>
+  {%- assign date_format = site.theme_settings.date_format | default: "%b %-d, %Y" -%}
+  <span class="post-link-date">{{ post.date | date: date_format }}</span>
+</li>
