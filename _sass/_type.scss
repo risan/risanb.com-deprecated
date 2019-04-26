@@ -39,6 +39,25 @@ img {
   max-width: 100%;
 }
 
+blockquote {
+  margin-left: -1.35 * $spacer;
+  margin-right: -1.35 * $spacer;
+  padding: $spacer 1.35 * $spacer;
+  background: $blockquote-bg;
+  border-left: 7px solid darken($blockquote-bg, 5%);
+  border-radius: 3px;
+
+  @include screen-md {
+    margin-left: 0;
+    margin-right: 0;
+    padding: $spacer;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 code {
   font-size: $code-font-size;
   color: inherit;
@@ -72,8 +91,8 @@ pre {
 
   @include screen-md {
     border-radius: 3px;
-    margin-left: -1 * $spacer;
-    margin-right: -1 * $spacer;
+    margin-left: 0;
+    margin-right: 0;
     padding: $spacer;
   }
 
@@ -84,7 +103,10 @@ pre {
   }
 }
 
-ul,
-ol {
+ul, ol {
   padding-left: 2rem;
+
+  @include screen-sm {
+    padding-left: 1.5rem;
+  }
 }

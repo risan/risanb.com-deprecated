@@ -17,6 +17,7 @@ theme_settings:
   date_format: "%-d %b %Y"
   google_analytics: UA-27136969-15
   disqus_website_name: risanb
+  asset_hash: "20190426"
   menu_pages:
     -
       path: blog.md

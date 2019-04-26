@@ -9,7 +9,7 @@
     {%- seo title -%}
   {%- endif -%}
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/main.css?v=' | relative_url | append: site.theme_settings.asset_hash }}">
   <link rel="shortcut icon" href="{{ '/img/earth-48x48.png' | relative_url }}">
   {%- feed_meta -%}
 </head>

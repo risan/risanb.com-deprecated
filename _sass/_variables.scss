@@ -1,6 +1,7 @@
 $black: #212529;
 $blue: #003fff;
 $grey: #6b7886;
+$grey-lighten: #f6f8fa;
 $purple: #ae2acc;
 $white: #fff;
 
@@ -15,9 +16,10 @@ $link-decoration: none;
 $link-hover-color: $purple;
 $link-hover-decoration: none;
 
+$blockquote-bg: $grey-lighten;
 $code-font-size: 85%;
 $inline-code-bg: rgba(27, 31, 35, .04);
-$pre-bg: #f6f8fa;
+$pre-bg: $grey-lighten;
 $pre-color: $black;
 
 $font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
